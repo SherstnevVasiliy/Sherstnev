@@ -9,7 +9,7 @@ const cardTitle = creatNewElement('H5', '', 'card-title');
 cardTitle.textContent = itemName;
 const cardText = creatNewElement('P', '', 'card-text');
 cardText.textContent = price;
-const cardBtn = creatNewElement('BUTTON', '', 'card-btn buy');
+const cardBtn = creatNewElement('DIV', '', 'card-btn buy');
 cardBtn.textContent = 'КУПИТЬ';
 card.append(imgCard, cardBody);
 cardBody.append(cardTitle, cardText, cardBtn);

@@ -167,7 +167,17 @@ h1 {
   box-sizing: border-box;
 }
 
-.card:hover {
+.card-btn {
+  color: black;
+  font-weight: 600;
+  font-family: initial;
+  border-radius: 5px;
+  background-color: darkgrey;
+  width: 100px;
+  text-align: center;
+  cursor: pointer;
+}
+.card:hover, .card-btn:hover {
   transform: scale(1.03);
 }
 
