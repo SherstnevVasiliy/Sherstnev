@@ -1,0 +1,188 @@
+
+html {
+  font-size: $font-size;
+  font-family: $font-family;
+  background: $background-color;
+  color: $font-color;
+  // max-width: $page-width;
+  line-height: 1.4;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+.container {
+	width: 1140px;
+  margin: 0 auto;
+  // display: flex;
+  // justify-content: space-between;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.pointer:hover{
+    transform: scale(1.05);
+    color: lightgrey;
+}
+li a:hover{
+  transform: scale(1.05);
+  color: lightgrey;
+}
+
+li a {
+  cursor: pointer;
+}
+
+
+
+// *****************************
+
+li {
+  list-style-type: none; /* Убираем маркеры */
+}
+
+#root {
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  // flex-direction: column;
+  align-self: center;
+  // height: 100vh;
+  margin: 0 ;
+}
+
+h1 {
+  text-align: center;
+  max-width: 90vw;
+}
+
+// .container {
+//   display: flex;
+//   justify-content: space-between;
+//   width: 1140px;
+//   margin: 0 auto;
+//   margin-top: 1rem;
+//   align-self: center;
+
+// }
+
+.topNav {
+  width: 100%;
+  height: 70px;
+  align-items: center;
+  border-bottom: 1px solid #DEDEDE;
+}
+
+.leftLogoNav {
+  display: flex;
+  justify-content: space-between;
+  width: 700px;
+  align-items: center;
+}
+
+.topNav, .leftNav, .rightNav {
+  display: flex;
+  justify-content: space-between;
+  color: #3A95FF;
+}
+
+.leftNav {
+  width: 500px;
+}
+
+.rightNav {
+  width: 200px;
+}
+
+.leftMenuSection {
+  color: #3A95FF;
+  width: 200 px;
+}
+
+.section {
+  margin-top: 20px;
+}
+
+#sectionContainer {
+  border-top: 1px solid #DEDEDE;
+}
+
+.leftMenu {
+  width: 220px;
+  height: 40px;
+  border-right: 1px solid #DEDEDE;
+}
+
+// VITRINA
+.section-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card {
+  padding: 0.5rem;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 20px;
+  font-size: 1rem;
+  height: 17rem;
+  box-sizing: border-box;
+  width: 280px;
+  height: 300px;
+  margin-bottom: 20px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  // justify-content: center;
+}
+
+.card-text {
+  color: red;
+  margin: 8px;
+  font-weight: bolder;
+}
+
+.card-title {
+  color: rgb(37, 34, 34);
+  margin: 0.5rem;
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
+
+.vitrina, .main-banner{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 880px;
+  box-sizing: border-box;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.hiden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+#futer-container {
+  height: 100px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: lightgrey;
+}

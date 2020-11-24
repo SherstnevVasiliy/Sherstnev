@@ -1,0 +1,44 @@
+.enter-form {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
+}
+.enter-form .enter-content {
+    background-color: #fefefe;
+    margin: 20% auto;
+    padding: 0 20px;
+    border: 1px solid #888;
+    border-radius: 10px;
+    width: 400px;
+    z-index: 99999;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.enter-form .enter-content .enter-close {
+    color: rgb(54, 54, 54);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.enter-description {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgb(32, 97, 23);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+}
+
+.enter-close {
+    align-self: flex-end;
+}

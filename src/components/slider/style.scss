@@ -1,0 +1,75 @@
+/* https://www.youtube.com/watch?v=rkz6LURkbBw */
+
+.carousel {
+    position: relative;
+    /* top: 15%; */
+    left: 50%;
+    width: 1140px;
+    transform: translate(-50%, -0%);
+    text-align: center;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.item-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.item {
+    display: none;
+    position: relative;
+    margin: 0 auto;
+    animation: 3s ease-in-out;
+}
+
+.active,
+.next {
+    display: block;
+}
+
+.next {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+.item.active {
+    display: block;
+}
+
+.to-left {
+    animation-name: left;
+}
+
+.from-left {
+    animation-name: left;
+    animation-direction: reverse;
+}
+
+.to-right {
+    animation-name: right;
+    animation-direction: reverse;
+}
+
+.from-right {
+    animation-name: right;
+}
+
+@keyframes left {
+    from {
+        left: 0;
+    }
+    to {
+        left: -100%;
+    }
+}
+
+@keyframes right {
+    from {
+        left: 100%;
+    }
+    to {
+        left: 0;
+    }
+}

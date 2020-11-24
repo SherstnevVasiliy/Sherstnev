@@ -1,1 +1,1 @@
-# Sherstnev
+#Финальный проект курса JAVASCRIPT2.0

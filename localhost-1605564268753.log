@@ -1,0 +1,6 @@
+banner1.jpg:1 GET http://localhost:8080/assets/images/banner1.jpg 404 (Not Found)
+Image (async)
+./src/index.js @ index.js:44
+__webpack_require__ @ bootstrap:21
+(anonymous) @ startup:4
+(anonymous) @ startup:6
