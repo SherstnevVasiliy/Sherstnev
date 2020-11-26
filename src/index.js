@@ -8,6 +8,8 @@ import { creatLeftMenu } from './components/LeftMenu';
 import { creatCard } from './components/Card'
 import { cardArrayConsumer, cardArrayBuisenes } from './components/Items'
 import { creatEnterForm } from './components/EnterForm'
+import { creatLoginForm } from './components/Login'
+import { creatRegistrForm } from './components/registr'
 
 const app = document.querySelector('#root');
 
@@ -177,26 +179,104 @@ app.append(futer);
 const futerConteiner = creatNewElement('DIV', 'futer-container', 'container')
 futer.append(futerConteiner);
 
-//всплывающие окна
+//Окно спасибо за покупку
 
 app.append(creatEnterForm());
 
-const modal = document.getElementById("enter-form");
-const btn = document.getElementsByClassName("buy");
-const span = document.getElementsByClassName("enter-close")[0];
+const modal = document.querySelector('.enter-form');
+const btn = document.querySelectorAll('.buy');
+const span = document.querySelector('.enter-close');
 
-for (let i = 0; i < btn.length; i++) {
-    btn[i].onclick = function () {
-        modal.style.display = "block";
-     } 
-}
+btn.forEach(listBtn => listBtn.addEventListener('click', function () {
+modal.style.display = "block";
+}));
 
-span.onclick = function () {
+span.addEventListener('click', function () {
    modal.style.display = "none";
-}
+});
 
-window.onclick = function (event) {
-   if (event.target == modal) {
-       modal.style.display = "none";
-   }
-}
+window.addEventListener('click', function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+ })
+
+//  Форма авторизации
+
+app.append(creatLoginForm());
+
+const btnLogin = document.querySelector('#open-enter-form');
+const closedLoginWindow = document.querySelector('.login-form');
+const closedLoginSpan = document.querySelector('.span-close-btn-login');
+
+btnLogin.addEventListener('click', function () {
+    closedLoginWindow.style.display = "block";
+});
+
+window.addEventListener('click', function (event) {
+    if (event.target == closedLoginWindow) {
+        closedLoginWindow.style.display = "none";
+    }
+});
+
+closedLoginSpan.addEventListener('click', function () {
+    closedLoginWindow.style.display = "none";
+ });
+
+const enterLogin = document.querySelector('.login-btn');
+console.log(enterLogin)
+
+enterLogin.addEventListener('click', function () {
+    const inputMailLoginValue = document.querySelector('.input-user-name').value;
+    const inputPassLoginValue = document.querySelector('.input-pass').value; 
+    if (inputMailLoginValue == '' || inputPassLoginValue == '') {
+        alert('Поля не должны быть пустыми...');
+    } else {
+    localStorage.setItem('login', inputMailLoginValue);
+    localStorage.setItem('password', inputPassLoginValue);
+    closedLoginWindow.style.display = "none";
+    document.querySelector('.input-user-name').value = '';
+    document.querySelector('.input-pass').value = ''; 
+    }
+ });
+
+//  Форма регистрации
+app.append(creatRegistrForm());
+
+const btnRegistr = document.querySelector('#open-registr-form');
+const closedRegistrWindow = document.querySelector('.registr-form');
+const closedRegistrSpan = document.querySelector('.span-close-btn-registr');
+
+btnRegistr.addEventListener('click', function () {
+    closedRegistrWindow.style.display = "block";
+});
+
+window.addEventListener('click', function (event) {
+    if (event.target == closedRegistrWindow) {
+        closedRegistrWindow.style.display = "none";
+    }
+});
+
+closedRegistrSpan.addEventListener('click', function () {
+    closedRegistrWindow.style.display = "none";
+ });
+
+const enterRegistr = document.querySelector('.registr-btn');
+console.log(enterRegistr)
+
+enterRegistr.addEventListener('click', function () {
+    const inputUserRegistrValue = document.querySelector('.input-registr-user-name').value;
+    const inputMailRegistrValue = document.querySelector('.input-registr-name').value;
+    const inputPassRegistrValue = document.querySelector('.input-registr-pass').value; 
+    if (inputUserRegistrValue == '' || inputMailRegistrValue == '' || inputPassRegistrValue == '') {
+        alert('Поля не должны быть пустыми...');
+    } else {
+    localStorage.setItem('registrName', inputUserRegistrValue);
+    localStorage.setItem('registrLogin', inputMailRegistrValue);
+    localStorage.setItem('registrPassword', inputPassRegistrValue);
+    closedRegistrWindow.style.display = "none";
+    document.querySelector('.input-registr-user-name').value = '';
+    document.querySelector('.input-registr-name').value = ''; 
+    document.querySelector('.input-registr-pass').value = ''; 
+    }
+ });
