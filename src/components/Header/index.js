@@ -40,7 +40,7 @@ const headerInfoRight = creatNewElement('DIV', 'header-info-rigt', 'header-info-
 const headerForm = creatNewElement('DIV', 'header-form', 'header-form');
 const headerFormList = creatNewElement('UL', 'header-form-list', 'header-form-list');
 
-const headerFormA1 = creatNewElement('A','' ,'pointer');
+const headerFormA1 = creatNewElement('A','open-registr-form' ,'pointer');
 headerFormA1.textContent = 'Регистрация'
 const headerFormA2 = creatNewElement('A','open-enter-form' ,'pointer');
 headerFormA2.textContent = 'Вход';

@@ -1,6 +1,14 @@
 // import './index.scss';
+import './style.scss';
 export const nodeCourusel_1 = function () {
     
+
+const couruselWrap = document.createElement('DIV')
+couruselWrap.id = 'carousel-wrap';
+couruselWrap.className = 'carousel-wrap';
+const couruselContainer = document.createElement('DIV')
+couruselContainer.id = 'carousel-container';
+couruselContainer.className = 'container';
 const courusel = document.createElement('DIV')
 courusel.id = 'carousel';
 courusel.className = 'carousel';
@@ -30,7 +38,9 @@ sliderImg_3.src = picture_3;
 couruselItem_1.append(sliderImg_1);
 couruselItem_2.append(sliderImg_2);
 couruselItem_3.append(sliderImg_3);
-return courusel;
+couruselContainer.append(courusel);
+couruselWrap.append(couruselContainer);
+return couruselWrap;
 }
 
  

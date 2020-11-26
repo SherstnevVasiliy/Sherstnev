@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <style>
+
+.login-form {
+    /* position: relative;
+    left: 50%;
+    top: 200px;
+    z-index: 1001; */
+
+
+    /* position: relative; */
+    /* z-index: 1001; */
+    /* display: none; */
+    position: fixed;
+
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 1000;
+    text-align: -webkit-center;
+    }
+.login-wrap {
+    position: relative;
+    top: 200px;
+    padding: 8px;
+    border: solid 1px lightgrey;
+    border-radius: 8px;
+    width: 200px;
+    background-color: white;
+}
+.login-dscr {
+    font-size: 22px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+.login-btn {
+    align-items: center;
+    border-radius: 8px;
+    /* border: none; */
+    cursor: pointer;
+    display: flex;
+    font-size: 16px;
+    height: 40px;
+    justify-content: center;
+    /* outline: none; */
+    /* padding: 0; */
+    text-align: center;
+    min-width: 138px;
+    color: #fff;
+    /* background-image: linear-gradient(to top, #fc8507, #ffa218); */
+    background-image: linear-gradient(to top, #084600, #5f8365);
+    font-weight: bold;
+}
+
+.login-btn:hover {
+    transform: scale(1.02);
+}
+.user-name {
+    border-radius: 8px;
+    border: 1px solid #b6b6b6;
+    margin-bottom: 15px;
+    padding: 2px;
+}
+.input-user-name::placeholder {
+    color: lightgray;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.input-user-name {
+    border: none;
+    height: 100%;
+    width: 100%;
+    color: #4e4e4e;
+    border: none;
+    font-weight: bold;
+    z-index: 2;
+    box-sizing: border-box;
+    font-size: 16px;
+    /* line-height: inherit; */
+    display: flex;
+    height: 40px;
+    justify-content: center;
+    text-align: center;
+}
+.input-pass {
+    -webkit-text-security: disc;
+}
+
+.close-btn {
+    position: absolute;
+    top: 5px;
+    left: 85%;
+    cursor: pointer;
+}
+.span-close-btn {
+    font-size: 32px;
+    font-weight: 900;
+    color: darkgray;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
+
+    </style>
+    <script>
+    const creatNewElement = (type = 'DIV', id = '', classList = '') => {
+    const newElement = document.createElement(type);
+    newElement.id = id;
+    newElement.classList = classList;
+    return newElement;
+}
+
+const loginForm = creatNewElement('DIV', 'login-form', 'login-form');
+const loginWrap = creatNewElement('DIV', 'login-wrap', 'login-wrap');
+const loginDescription = creatNewElement('DIV', 'login-dscr', 'login-dscr')
+loginDescription.textContent = 'Войти';
+
+const userName = creatNewElement('DIV', 'user-name', 'user-name');
+const inputUserName = creatNewElement('input', 'input-user-name', 'input-user-name');
+inputUserName.placeholder = 'user@example.com'
+
+const userPass = creatNewElement('DIV', 'user-pass', 'user-name');
+const inputUserPass = creatNewElement('input', 'input-user-pass', 'input-user-name input-pass');
+inputUserPass.placeholder = 'Пароль'
+
+const login = creatNewElement('DIV', 'login-window', 'login-window');
+const logButton = creatNewElement('DIV', 'login-btn', 'login-btn');
+logButton.textContent = 'ВОЙТИ';
+
+const closeBtn = creatNewElement('DIV', 'close-btn', 'close-btn');
+const spanCloseBtn = creatNewElement('SPAN', 'span-close-btn', 'span-close-btn');
+spanCloseBtn.textContent = '\u00D7';
+
+
+
+document.body.append(loginForm);
+loginForm.append(loginWrap)
+loginWrap.append(closeBtn);
+closeBtn.append(spanCloseBtn);
+loginWrap.append(loginDescription); 
+loginWrap.append(userName);  
+userName.append(inputUserName);
+loginWrap.append(userPass);  
+userPass.append(inputUserPass);
+loginWrap.append(logButton);
+
+    
+
+    </script>
+    
+</body>
+</html>

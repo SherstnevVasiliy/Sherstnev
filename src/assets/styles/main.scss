@@ -147,9 +147,9 @@ h1 {
 }
 
 .card-text {
-  color: red;
+  color: darkcyan;
   margin: 8px;
-  font-weight: bolder;
+  font-weight: 700;
 }
 
 .card-title {
@@ -168,11 +168,11 @@ h1 {
 }
 
 .card-btn {
-  color: black;
-  font-weight: 600;
-  font-family: initial;
+  color: #fefefe;
+  font-weight: 500;
+  font-family: system-ui;
   border-radius: 5px;
-  background-color: darkgrey;
+  background-color: darkslateblue;
   width: 100px;
   text-align: center;
   cursor: pointer;
