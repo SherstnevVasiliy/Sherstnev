@@ -40,11 +40,16 @@ const headerInfoRight = creatNewElement('DIV', 'header-info-rigt', 'header-info-
 const headerForm = creatNewElement('DIV', 'header-form', 'header-form');
 const headerFormList = creatNewElement('UL', 'header-form-list', 'header-form-list');
 
-const headerFormA1 = creatNewElement('A','open-registr-form' ,'pointer');
+const headerFormA1 = creatNewElement('A','open-registr-form' ,'pointer login-no');
 headerFormA1.textContent = 'Регистрация'
-const headerFormA2 = creatNewElement('A','open-enter-form' ,'pointer');
+const headerFormA2 = creatNewElement('A','open-enter-form' ,'pointer login-no');
 headerFormA2.textContent = 'Вход';
-headerFormList.append(headerFormA1, headerFormA2);
+const headerFormA3 = creatNewElement('A','open-registr-form-login' ,'login-ok');
+headerFormA3.style.display = 'none';
+const headerFormA4 = creatNewElement('A','open-enter-form-login' ,'pointer login-ok');
+headerFormA4.textContent = 'Выйти';
+headerFormA4.style.display = 'none';
+headerFormList.append(headerFormA1, headerFormA2, headerFormA3, headerFormA4);
 headerForm.append(headerFormList);
 headerInfoRight.append(headerForm);
 
