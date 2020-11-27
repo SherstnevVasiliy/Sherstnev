@@ -10,6 +10,7 @@ import { cardArrayConsumer, cardArrayBuisenes } from './components/Items'
 import { creatEnterForm } from './components/EnterForm'
 import { creatLoginForm } from './components/Login'
 import { creatRegistrForm } from './components/registr'
+import { creatFuter } from './components/Futer'
 
 const app = document.querySelector('#root');
 
@@ -60,7 +61,7 @@ main.append(imgMain);
 const creatVitrinaConsumer = () => {
     for (let i = 0; i < cardArrayConsumer.length; i++) {
         let card = [];
-        card[i] = creatCard(cardArrayConsumer[i].pic, cardArrayConsumer[i].name, cardArrayConsumer[i].price, 'card consumer-item hiden');
+        card[i] = creatCard(cardArrayConsumer[i].pic, cardArrayConsumer[i].name, cardArrayConsumer[i].description, cardArrayConsumer[i].price, 'card consumer-item hiden', cardArrayConsumer[i].rating);
         vitrina.append(card[i]);
     }
 };
@@ -68,7 +69,7 @@ const creatVitrinaConsumer = () => {
 const creatVitrinaBuisines = () => {
     for (let i = 0; i < cardArrayBuisenes.length; i++) {
         let card = [];
-        card[i] = creatCard(cardArrayBuisenes[i].pic, cardArrayBuisenes[i].name, cardArrayBuisenes[i].price, 'card buisines-item hiden');
+        card[i] = creatCard(cardArrayBuisenes[i].pic, cardArrayBuisenes[i].name, cardArrayBuisenes[i].description, cardArrayBuisenes[i].price, 'card buisines-item hiden', cardArrayBuisenes[i].rating);
         vitrina.append(card[i]);
     }
 };
@@ -174,16 +175,13 @@ bannerList.forEach(list => list.addEventListener('click', function () {
 
 // FUTER
 
-const futer = creatNewElement('DIV', 'futer', 'futer');
-app.append(futer);
-const futerConteiner = creatNewElement('DIV', 'futer-container', 'container')
-futer.append(futerConteiner);
+app.append(creatFuter());
 
 //Окно спасибо за покупку
 
 app.append(creatEnterForm());
 
-const modal = document.querySelector('.enter-form');
+const enterFormThk = document.querySelector('.enter-form');
 const btn = document.querySelectorAll('.buy');
 const span = document.querySelector('.enter-close');
 
@@ -191,16 +189,21 @@ btn.forEach(listBtn => listBtn.addEventListener('click', function () {
     if (localStorage.getItem('isLogin') != 'ok') {
         alert ('Для офрмления заказа необходимо авторизоваться...')
     } else {
-modal.style.display = "block";};
+        enterFormThk.style.display = "block";
+            const etnerDscr1 = document.querySelector('#enter-description_1');
+            const etnerDscr2 = document.querySelector('#enter-description_2');
+            etnerDscr1.textContent = `${localStorage.getItem('registrName')}, на Вашу почту`;
+            etnerDscr2.textContent = `${localStorage.getItem('registrLogin')}`;
+        };
 }));
 
 span.addEventListener('click', function () {
-   modal.style.display = "none";
+    enterFormThk.style.display = "none";
 });
 
 window.addEventListener('click', function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (event.target == enterFormThk) {
+        enterFormThk.style.display = "none";
     }
  })
 

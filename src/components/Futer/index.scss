@@ -1,0 +1,13 @@
+.futer-wrap {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: inherit;
+}
+
+#futer-container {
+    height: 80px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+}

@@ -16,13 +16,14 @@
     padding: 0 20px;
     border: 1px solid #888;
     border-radius: 10px;
-    width: 400px;
+    width: 300px;
     z-index: 99999;
-    height: 100px;
+    // height: 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    padding-bottom: 20px;
 }
 .enter-form .enter-content .enter-close {
     color: rgb(54, 54, 54);
@@ -32,13 +33,25 @@
     cursor: pointer;
 }
 .enter-description {
-    font-size: 28px;
+    font-size: 18px;
     font-weight: bold;
-    color: rgb(32, 97, 23);
+    color: rgb(76, 77, 75);
     box-sizing: border-box;
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
 }
 
 .enter-close {
     align-self: flex-end;
+}
+
+#enter-description_2 {
+    color: rgb(48, 48, 104);
+    font-size: 20px;
+}
+
+
+#enter-description_4 {
+    color: rgb(143, 19, 36);
+    font-size: 20px;
+    margin-top: 10px;
 }
