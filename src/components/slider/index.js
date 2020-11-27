@@ -1,4 +1,3 @@
-// import './index.scss';
 import './style.scss';
 export const nodeCourusel_1 = function () {
     

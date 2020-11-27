@@ -9,7 +9,7 @@
 }
 .header-info-left, .header-info-right {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
 }
 .header-info-left {
 	width: 700px;
@@ -17,7 +17,7 @@
 
 .header-form-list {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 180px;
 }
 .header-form-list a{

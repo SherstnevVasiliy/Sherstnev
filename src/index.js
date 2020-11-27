@@ -52,7 +52,7 @@ rightSectionContainer.append(vitrina);
 const main = creatNewElement('DIV', 'main-banner', 'main-banner show')
 rightSectionContainer.append(main);
 const imgMain = creatNewElement('IMG', '', 'img-main');
-const picMain = require('./assets/images/bannermain.jpg');
+const picMain = require('./assets/images/bannermain.png');
 imgMain.src = picMain;
 main.append(imgMain);
 
@@ -96,7 +96,6 @@ consumerList.forEach(list => list.addEventListener('click', function () {
         }
     }
     let mainSelector = document.querySelector('.main-banner');
-    console.log(mainSelector)
     if (mainSelector.className.indexOf('show') != -1) {
         mainSelector.classList.remove('show');
         mainSelector.classList.add('hiden');
@@ -187,7 +186,7 @@ const span = document.querySelector('.enter-close');
 
 btn.forEach(listBtn => listBtn.addEventListener('click', function () {
     if (localStorage.getItem('isLogin') != 'ok') {
-        alert ('Для офрмления заказа необходимо авторизоваться...')
+        alert ('Для оформления заказа необходимо авторизоваться...')
     } else {
         enterFormThk.style.display = "block";
             const etnerDscr1 = document.querySelector('#enter-description_1');
@@ -233,18 +232,15 @@ closedLoginSpan.addEventListener('click', function () {
  });
 
 const enterLogin = document.querySelector('.login-btn');
-console.log(enterLogin)
 
 enterLogin.addEventListener('click', function () {
     const inputMailLoginValue = document.querySelector('.input-user-name').value;
     const inputPassLoginValue = document.querySelector('.input-pass').value; 
-    console.log(localStorage.getItem('registrLogin'));
-    console.log(localStorage.getItem('registrPassword'));
     if (inputMailLoginValue == '' || inputPassLoginValue == '') {
         alert('Поля не должны быть пустыми...');
     } else if (!isEmail(inputMailLoginValue)) {
         alert('Нeкорректный Email...');
-    } else if (inputMailLoginValue != localStorage.getItem('registrLogin') || inputPassLoginValue != localStorage.getItem('registrPassword')) {
+    } else if (inputMailLoginValue.toLowerCase() != localStorage.getItem('registrLogin').toLowerCase() || inputPassLoginValue != localStorage.getItem('registrPassword')) {
         alert('Нeкорректный Email или пароль...');} else {
     closedLoginWindow.style.display = "none";
     document.querySelector('.input-user-name').value = '';
@@ -284,7 +280,6 @@ closedRegistrSpan.addEventListener('click', function () {
  });
 
 const enterRegistr = document.querySelector('.registr-btn');
-console.log(enterRegistr)
 
 enterRegistr.addEventListener('click', function () {
     const inputUserRegistrValue = document.querySelector('.input-registr-user-name').value;
